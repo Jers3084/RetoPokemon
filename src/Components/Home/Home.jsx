@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styles from './Home.module.css'
 
 export const Home = () => {
@@ -27,30 +27,38 @@ export const Home = () => {
     setPokemon(arregloPokemon)
   }
 
+  const borrar = () => {
+    setFlag(!flag)
+  }
+
   return (
     <>
       <div className={styles.contenedor}>
         <h1>Pokemons</h1>
-        <p>Pulse el boton para obtener Pokemones</p>
-        <button className={styles.boton} onClick={peticiones}>
-          Run
-        </button>
+        <p>Pulse el boton para obtener o borrar Pokemones</p>
+        {flag ? (
+          <button className={styles.boton} onClick={borrar}>
+            Borrar
+          </button>
+        ) : (
+          <button className={styles.boton} onClick={peticiones}>
+            Obtener
+          </button>
+        )}
       </div>
 
       <div>
         {flag ? (
-          <div className='contenido'>
-            {pokemon.map((x) => {
-              console.log(x.imagen)
+          <div className={styles.contenido}>
+            {pokemon.map((x, index) => {
               return (
-                <div className={styles.card}>
+                <div key={index} className={styles.card}>
                   <div className={styles.imagen_card}>
-                  <img src={x.imagen} alt="" />
+                    <img src={x.imagen} alt="" />
                   </div>
                   <div className={styles.title_card}>
                     <h3>{x.nombre}</h3>
                   </div>
-                  
                 </div>
               )
             })}
