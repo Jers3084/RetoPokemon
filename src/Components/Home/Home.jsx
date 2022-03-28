@@ -37,11 +37,11 @@ export const Home = () => {
         <h1>Pokemons</h1>
         <p>Pulse el boton para obtener o borrar Pokemones</p>
         {flag ? (
-          <button className={styles.boton} onClick={borrar}>
+          <button className={styles.boton_rojo} onClick={borrar}>
             Borrar
           </button>
         ) : (
-          <button className={styles.boton} onClick={peticiones}>
+          <button className={styles.boton_negro} onClick={peticiones}>
             Obtener
           </button>
         )}

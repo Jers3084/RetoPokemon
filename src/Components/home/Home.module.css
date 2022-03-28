@@ -9,18 +9,34 @@
   text-align: center;
   background-color: white;
 }
-.boton {
+.boton_negro {
   width: 80px;
   height: 40px;
   padding: 5px;
-  background-color: blue;
-  border: blue 1px solid;
+  color: white;
+  background-color: black;
+  border: black 1px solid;
   border-radius: 4px;
 }
 
-.boton:hover {
-  background-color: rgb(131, 157, 158);
-  border: blue 3px solid;
+.boton_negro:hover {
+  background-color: rgb(66, 66, 66);
+  border: black 3px solid;
+}
+
+.boton_rojo {
+  width: 80px;
+  height: 40px;
+  padding: 5px;
+  color: white;
+  background-color: red;
+  border: red 1px solid;
+  border-radius: 4px;
+}
+
+.boton_rojo:hover {
+  background-color: rgb(252, 131, 131);
+  border: red 3px solid;
 }
 
 .contenido {
